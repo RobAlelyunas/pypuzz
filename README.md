@@ -1,2 +1,2 @@
 # pypuzz
-python puzzle generators and solvers
+python puzzle generators and solvers!
