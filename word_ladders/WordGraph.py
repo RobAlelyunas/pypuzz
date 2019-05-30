@@ -34,8 +34,8 @@ def generate_relations_file():
     for word1 in content:
         print(word1)
         counter = counter + 1
-        if (counter > 200):
-            break
+        #if (counter > 200):
+        #    break
         for word2 in words_by_len[len(word1)]:
             for c in range(0,len(word1)):
                 if word1[c] != word2[c]:
