@@ -1,6 +1,6 @@
 import os
 import json
-import resources
+import pypuzz.resources as resources
 
 class WordGraph():
     def __init__(self):

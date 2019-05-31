@@ -1,5 +1,8 @@
 import sys
-from word_ladders.WordGraph import WordGraph
+
+# test against pypuzz src tree
+sys.path.append('../pypuzz')
+from pypuzz.word_ladders import WordGraph
 
 def test_sprint_and_spring_are_1_distance_apart():
     print('aaaava')

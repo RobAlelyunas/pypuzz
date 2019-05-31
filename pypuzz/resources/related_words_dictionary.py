@@ -1,7 +1,7 @@
 
 import os
 import json
-from resources.constants import *
+from pypuzz.resources.constants import *
 
 class RelatedWordsDictionary():
     
