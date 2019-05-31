@@ -11,6 +11,27 @@ class WordGraph():
     def get_related(self, word):
         return self.words[word]
 
+    def get_ladders(self, word1, word2):
+        visited_words = set()
+        ladders = [(word1,)]
+        next_ladders = []
+        solutions = []
+        while not solutions and ladders:
+            for ladder in ladders:
+                last = ladder[-1]
+                visited_words.add(last)
+                for related in self.get_related(last):
+                    if related in visited_words:
+                        continue
+                    elif (related == word2):
+                        solutions.append(ladder + (related,))
+                    else:
+                        next_ladders.append(ladder + (related,))
+            ladders = next_ladders
+            next_ladders = []
+        return solutions
+
+
 '''
 This generates a json structure that shows for each word all the words that are one character away.  It takes about an hour
 to run currently so only needs to be done when a new word list is used
