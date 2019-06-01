@@ -2,13 +2,9 @@ import os
 import json
 import pypuzz.resources as resources
 
-class WordGraph():
+class WordLadders():
     def __init__(self):
-        relations = resources.RelatedWordsDictionary(source=resources.US_SCRABBLE)
-        self.words = relations.get_resource()
-
-    def get_related(self, word):
-        return self.words[word]
+        self.relations = resources.RelatedWordsDictionary(source=resources.US_SCRABBLE)
 
     def get_ladders(self, word1, word2):
         visited_words = set()
@@ -19,7 +15,7 @@ class WordGraph():
             for ladder in ladders:
                 last = ladder[-1]
                 visited_words.add(last)
-                for related in self.get_related(last):
+                for related in self.relations.get_related(last):
                     if related in visited_words:
                         continue
                     elif (related == word2):

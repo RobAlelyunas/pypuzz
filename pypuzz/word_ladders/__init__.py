@@ -1,1 +1,1 @@
-from pypuzz.word_ladders.word_graph import WordGraph
+from pypuzz.word_ladders.word_ladders import WordLadders
