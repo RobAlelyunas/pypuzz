@@ -1,6 +1,6 @@
 # resource constants
 
-US_SCRABBLE = 'word_list_twl06'
-EUROPE_SCRABBLE = 'word_list_sowpods'
-MODERATE = 'todo'
-SIMPLE = 'todo'
+US_SCRABBLE = 'us_scrabble'
+EUROPE_SCRABBLE = 'europe_scrabble'
+FREQUENT_5000 = 'frequent_5000'
+MODERATE_VOCAB_1500 = 'moderate_vocab_1500'
