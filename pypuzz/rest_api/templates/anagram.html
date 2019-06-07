@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Anagram</title>
+</head>
+<body>
+
+    <script>
+    function toggle() {
+        var x = document.getElementById("answerDIV");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+    </script>
+
+        <h2> Scrambled Word</h2>
+
+        <div style="margin: 0 0 40px 0; font-size: 20px;">
+          {{ scrambled }}
+        </div>
+
+        
+        <button onclick="toggle()">Show Answer</button>
+
+        <div style="display: none; font-size: 20px; margin: 40px 0 0 0" id="answerDIV">
+                {{ word }}
+        </div>
+
+</body>
+</html>
