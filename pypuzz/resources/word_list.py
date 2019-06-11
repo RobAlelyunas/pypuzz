@@ -9,7 +9,7 @@ class WordList():
     def __init__(self, source=US_SCRABBLE):
         current_dir = os.path.dirname(os.path.realpath(__file__))
         word_list_file_name = os.path.join(current_dir,'files',f"{source}.txt")
-        with open(word_list_file_name) as word_list_file:
+        with open(word_list_file_name, encoding='utf-8') as word_list_file:
             self.content = word_list_file.readlines()
         self.content = [x.strip() for x in self.content]
         self.words_by_len = {}

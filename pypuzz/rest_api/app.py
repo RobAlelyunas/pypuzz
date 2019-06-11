@@ -5,15 +5,19 @@ from pypuzz.anagrams import Anagrams
 from pypuzz.resources import WordList
 from pypuzz.resources import MODERATE_VOCAB_1500
 
-app = Flask(__name__)
-api = Api(app)
+application = Flask(__name__)
+api = Api(application)
 
 class Anagrams_Api(Resource):
 
+    def get_param_or_default(self, param, defaultval):
+        string = request.args.get(param)
+        if not string:
+            string = defaultval
+        return string
+
     def get(self):
-        length = int(request.args.get("length"))
-        if not length:
-            length = 7
+        length = int(self.get_param_or_default("length", 7))     
         word_list = WordList(MODERATE_VOCAB_1500)
         word = word_list.get_random_word(length)
         anagrams = Anagrams()
@@ -25,4 +29,5 @@ class Anagrams_Api(Resource):
 
 api.add_resource(Anagrams_Api,"/anagrams")
 
-app.run(debug=True)
+if __name__ == "__main__":
+    application.run(debug=True)
